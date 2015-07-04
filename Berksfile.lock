@@ -1,0 +1,6 @@
+DEPENDENCIES
+  net-radio-archive
+    path: site-cookbooks/net-radio-archive
+
+GRAPH
+  net-radio-archive (0.1.0)
