@@ -1,0 +1,11 @@
+{
+  "name": "net-radio",
+  "override_attributes": {
+    "rbenv": {
+      "install_prefix": "/usr/local"
+    }
+  },
+  "run_list": [
+    "recipe[net-radio-archive]"
+  ]
+}

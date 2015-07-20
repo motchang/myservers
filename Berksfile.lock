@@ -1,6 +1,44 @@
 DEPENDENCIES
+  common-packages
+    path: site-cookbooks/common-packages
+  emacs
+    path: site-cookbooks/emacs
   net-radio-archive
     path: site-cookbooks/net-radio-archive
 
 GRAPH
+  apt (2.7.0)
+  build-essential (2.2.3)
+  chef_handler (1.2.0)
+  common-packages (0.1.0)
+  dmg (2.2.2)
+  emacs (0.1.0)
+  git (4.2.4)
+    build-essential (>= 0.0.0)
+    dmg (>= 0.0.0)
+    windows (>= 0.0.0)
+    yum-epel (>= 0.0.0)
   net-radio-archive (0.1.0)
+    git (>= 0.0.0)
+    rbenv (~> 1.7.1)
+    selinux (~> 0.5.0)
+    yum-epel (>= 0.0.0)
+    yum-remi (>= 0.0.0)
+    yum-repoforge (>= 0.0.0)
+  ohai (2.0.1)
+  rbenv (1.7.1)
+    apt (>= 0.0.0)
+    build-essential (>= 0.0.0)
+    git (>= 0.0.0)
+    ohai (>= 1.1)
+  selinux (0.5.6)
+  windows (1.37.0)
+    chef_handler (>= 0.0.0)
+  yum (3.6.3)
+  yum-epel (0.6.2)
+    yum (~> 3.2)
+  yum-remi (0.1.0)
+    yum (>= 0.0.0)
+  yum-repoforge (0.5.3)
+    yum (~> 3.2)
+    yum-epel (>= 0.0.0)
