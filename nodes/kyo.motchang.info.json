@@ -1,10 +1,347 @@
 {
   "name": "kyo.motchang.info",
-  "chef_environment": "production",
+  "override": {
+    "rbenv": {
+      "install_prefix": "/usr/local"
+    }
+  },
   "normal": {
     "tags": [
 
-    ]
+    ],
+    "rbenv": {
+      "root": "/usr/local/rbenv"
+    },
+    "ruby_build": {
+      "prefix": "/usr/local/rbenv/plugins/ruby_build",
+      "bin_path": "/usr/local/rbenv/plugins/ruby_build/bin"
+    }
+  },
+  "default": {
+    "build-essential": {
+      "compile_time": false
+    },
+    "dmg": {
+      "base_dir": "/Applications",
+      "cache_dir": "/var/chef/cache"
+    },
+    "chef_handler": {
+      "root_user": "root",
+      "root_group": "root",
+      "handler_path": "/var/chef/handlers"
+    },
+    "windows": {
+      "allow_pending_reboots": true,
+      "allow_reboot_on_failure": false,
+      "rubyzipversion": null,
+      "reboot_timeout": 60
+    },
+    "yum": {
+      "main": {
+        "cachedir": "/var/cache/yum/$basearch/$releasever",
+        "distroverpkg": "centos-release",
+        "alwaysprompt": null,
+        "assumeyes": null,
+        "bandwidth": null,
+        "bugtracker_url": null,
+        "clean_requirements_on_remove": null,
+        "color": null,
+        "color_list_available_downgrade": null,
+        "color_list_available_install": null,
+        "color_list_available_reinstall": null,
+        "color_list_available_upgrade": null,
+        "color_list_installed_extra": null,
+        "color_list_installed_newer": null,
+        "color_list_installed_older": null,
+        "color_list_installed_reinstall": null,
+        "color_search_match": null,
+        "color_update_installed": null,
+        "color_update_local": null,
+        "color_update_remote": null,
+        "commands": null,
+        "debuglevel": null,
+        "diskspacecheck": null,
+        "enable_group_conditionals": null,
+        "errorlevel": null,
+        "exactarch": null,
+        "exclude": null,
+        "gpgcheck": true,
+        "group_package_types": null,
+        "groupremove_leaf_only": null,
+        "history_list_view": null,
+        "history_record": null,
+        "history_record_packages": null,
+        "http_caching": null,
+        "installonly_limit": null,
+        "installonlypkgs": null,
+        "installroot": null,
+        "keepalive": null,
+        "keepcache": false,
+        "kernelpkgnames": null,
+        "localpkg_gpgcheck": null,
+        "logfile": "/var/log/yum.log",
+        "max_retries": null,
+        "mdpolicy": null,
+        "metadata_expire": null,
+        "mirrorlist_expire": null,
+        "multilib_policy": null,
+        "obsoletes": null,
+        "overwrite_groups": null,
+        "password": null,
+        "path": "/etc/yum.conf",
+        "persistdir": null,
+        "pluginconfpath": null,
+        "pluginpath": null,
+        "plugins": null,
+        "protected_multilib": null,
+        "protected_packages": null,
+        "proxy": null,
+        "proxy_password": null,
+        "proxy_username": null,
+        "recent": null,
+        "releasever": null,
+        "repo_gpgcheck": null,
+        "reposdir": null,
+        "reset_nice": null,
+        "rpmverbosity": null,
+        "showdupesfromrepos": null,
+        "skip_broken": null,
+        "ssl_check_cert_permissions": null,
+        "sslcacert": null,
+        "sslclientcert": null,
+        "sslclientkey": null,
+        "sslverify": null,
+        "syslog_device": null,
+        "syslog_facility": null,
+        "syslog_ident": null,
+        "throttle": null,
+        "timeout": null,
+        "tolerant": false,
+        "tsflags": null,
+        "username": null
+      },
+      "epel-debuginfo": {
+        "repositoryid": "epel-debuginfo",
+        "description": "Extra Packages for Enterprise Linux 6 - $basearch - Debug",
+        "mirrorlist": "https://mirrors.fedoraproject.org/metalink?repo=epel-debug-6&arch=$basearch",
+        "gpgkey": "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false
+      },
+      "epel-source": {
+        "repositoryid": "epel-source",
+        "description": "Extra Packages for Enterprise Linux 6 - $basearch - Source",
+        "mirrorlist": "https://mirrors.fedoraproject.org/metalink?repo=epel-source-6&arch=$basearch",
+        "gpgkey": "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false
+      },
+      "epel-testing-debuginfo": {
+        "repositoryid": "epel-testing-debuginfo",
+        "description": "Extra Packages for Enterprise Linux 6 - Testing - $basearch Debug",
+        "mirrorlist": "https://mirrors.fedoraproject.org/metalink?repo=testing-debug-epel6&arch=$basearch",
+        "gpgkey": "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false
+      },
+      "epel-testing-source": {
+        "repositoryid": "epel-testing-source",
+        "description": "Extra Packages for Enterprise Linux 6 - Testing - $basearch Source",
+        "mirrorlist": "https://mirrors.fedoraproject.org/metalink?repo=testing-source-epel6&arch=$basearch",
+        "gpgkey": "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false
+      },
+      "epel-testing": {
+        "repositoryid": "epel-testing",
+        "description": "Extra Packages for Enterprise Linux 6 - Testing - $basearch",
+        "mirrorlist": "https://mirrors.fedoraproject.org/metalink?repo=testing-epel6&arch=$basearch",
+        "gpgkey": "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false
+      },
+      "epel": {
+        "repositoryid": "epel",
+        "description": "Extra Packages for Enterprise Linux 6 - $basearch",
+        "mirrorlist": "https://mirrors.fedoraproject.org/metalink?repo=epel-6&arch=$basearch",
+        "gpgkey": "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": true,
+        "managed": true
+      },
+      "remi-php55": {
+        "repositoryid": "remi-php55",
+        "description": "Les RPM de remi de PHP 5.5 pour Enterprise Linux 6 - $basearch",
+        "mirrorlist": "http://rpms.famillecollet.com/enterprise/6/php55/mirror",
+        "gpgkey": "http://rpms.famillecollet.com/RPM-GPG-KEY-remi",
+        "failovermethod": "roundrobin",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": true
+      },
+      "remi-php56": {
+        "repositoryid": "remi-php56",
+        "description": "Les RPM de remi de PHP 5.6 pour Enterprise Linux 6 - $basearch",
+        "mirrorlist": "http://rpms.famillecollet.com/enterprise/6/php56/mirror",
+        "gpgkey": "http://rpms.famillecollet.com/RPM-GPG-KEY-remi",
+        "failovermethod": "roundrobin",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": true
+      },
+      "remi-test": {
+        "repositoryid": "remi-test",
+        "description": "Les RPM de remi en test pour Enterprise Linux 6 - $basearch",
+        "mirrorlist": "http://rpms.famillecollet.com/enterprise/6/test/mirror",
+        "gpgkey": "http://rpms.famillecollet.com/RPM-GPG-KEY-remi",
+        "failovermethod": "roundrobin",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": true
+      },
+      "remi": {
+        "repositoryid": "remi",
+        "description": "Les RPM de remi pour Enterprise Linux 6 - $basearch",
+        "mirrorlist": "http://rpms.famillecollet.com/enterprise/6/remi/mirror",
+        "gpgkey": "http://rpms.famillecollet.com/RPM-GPG-KEY-remi",
+        "failovermethod": "roundrobin",
+        "gpgcheck": true,
+        "enabled": true,
+        "managed": true
+      },
+      "rpmforge-extras": {
+        "repositoryid": "rpmforge-extras",
+        "description": "RHEL $releasever - RPMforge.net - extras",
+        "mirrorlist": "http://mirrorlist.repoforge.org/el6/mirrors-rpmforge-extras",
+        "enabled": true,
+        "managed": true,
+        "gpgcheck": true,
+        "gpgkey": "http://apt.sw.be/RPM-GPG-KEY.dag.txt"
+      },
+      "rpmforge-testing": {
+        "repositoryid": "rpmforge-testing",
+        "description": "RHEL $releasever - RPMforge.net - testing",
+        "mirrorlist": "http://mirrorlist.repoforge.org/el6/mirrors-rpmforge-testing",
+        "enabled": false,
+        "managed": false,
+        "gpgcheck": true,
+        "gpgkey": "http://apt.sw.be/RPM-GPG-KEY.dag.txt"
+      },
+      "rpmforge": {
+        "repositoryid": "rpmforge",
+        "description": "RHEL $releasever - RPMforge.net - dag",
+        "mirrorlist": "http://mirrorlist.repoforge.org/el6/mirrors-rpmforge",
+        "enabled": true,
+        "managed": true,
+        "gpgcheck": true,
+        "gpgkey": "http://apt.sw.be/RPM-GPG-KEY.dag.txt"
+      }
+    },
+    "yum-epel": {
+      "repositories": [
+        "epel",
+        "epel-debuginfo",
+        "epel-source",
+        "epel-testing",
+        "epel-testing-debuginfo",
+        "epel-testing-source"
+      ]
+    },
+    "git": {
+      "prefix": "/usr/local",
+      "version": "1.9.5",
+      "url": "https://nodeload.github.com/git/git/tar.gz/v1.9.5",
+      "checksum": "0f30984828d573da01d9f8e78210d5f4c56da1697fd6d278bad4cfa4c22ba271",
+      "use_pcre": false,
+      "server": {
+        "base_path": "/srv/git",
+        "export_all": "true"
+      }
+    },
+    "apt": {
+      "cacher-client": {
+        "restrict_environment": false
+      },
+      "cacher_dir": "/var/cache/apt-cacher-ng",
+      "cacher_interface": null,
+      "cacher_port": 3142,
+      "cacher_ssl_support": false,
+      "caching_server": false,
+      "compiletime": false,
+      "compile_time_update": false,
+      "key_proxy": "",
+      "cache_bypass": {
+
+      },
+      "periodic_update_min_delay": 86400,
+      "launchpad_api_version": "1.0",
+      "unattended_upgrades": {
+        "enable": false,
+        "update_package_lists": true,
+        "allowed_origins": [
+          "Centos "
+        ],
+        "package_blacklist": [
+
+        ],
+        "auto_fix_interrupted_dpkg": false,
+        "minimal_steps": false,
+        "install_on_shutdown": false,
+        "mail": null,
+        "mail_only_on_error": true,
+        "remove_unused_dependencies": false,
+        "automatic_reboot": false,
+        "automatic_reboot_time": "now",
+        "dl_limit": null
+      }
+    },
+    "ohai": {
+      "plugin_path": "/etc/chef/ohai_plugins",
+      "hints_path": "/etc/chef/ohai/hints",
+      "plugins": {
+        "ohai": "plugins"
+      }
+    },
+    "rbenv": {
+      "user": "rbenv",
+      "group": "rbenv",
+      "manage_home": true,
+      "group_users": [
+
+      ],
+      "git_repository": "https://github.com/sstephenson/rbenv.git",
+      "git_revision": "master",
+      "install_prefix": "/opt",
+      "root_path": "/usr/local/rbenv",
+      "user_home": "/home/rbenv"
+    },
+    "ruby_build": {
+      "git_repository": "https://github.com/sstephenson/ruby-build.git",
+      "git_revision": "master"
+    },
+    "rbenv_vars": {
+      "git_repository": "https://github.com/sstephenson/rbenv-vars.git",
+      "git_revision": "master"
+    },
+    "yum-remi": {
+      "repositories": [
+        "remi",
+        "remi-php55",
+        "remi-php56",
+        "remi-test"
+      ]
+    }
   },
   "automatic": {
     "kernel": {
@@ -262,9 +599,9 @@
           ],
           "neighbour_inet6": {
             "2001:e42:102:1508::2": "cc:4e:24:18:4f:00",
-            "fe80::2": "cc:4e:24:18:4f:00",
             "2001:e42:102:1508::1": "00:00:5e:00:02:d0",
-            "fe80::1": "00:00:5e:00:02:d0"
+            "fe80::1": "00:00:5e:00:02:d0",
+            "fe80::2": "cc:4e:24:18:4f:00"
           }
         },
         "eth1": {
@@ -310,15 +647,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "18574",
-              "packets": "96",
+              "bytes": "9956707",
+              "packets": "9768",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "18574",
-              "packets": "96",
+              "bytes": "9956707",
+              "packets": "9768",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -328,16 +665,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "2462516",
-              "packets": "30880",
+              "bytes": "94990601",
+              "packets": "1570403",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "81167287",
-              "packets": "185307",
+              "bytes": "2100324034",
+              "packets": "27459395",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -412,6 +749,9 @@
         "gems_dir": "/opt/chef/embedded/lib/ruby/gems/2.1.0",
         "gem_bin": "/opt/chef/embedded/bin/gem"
       },
+      "nodejs": {
+        "version": "0.10.36"
+      },
       "lua": {
         "version": "5.1.4"
       },
@@ -434,13 +774,13 @@
     "filesystem": {
       "/dev/vda3": {
         "kb_size": "203974444",
-        "kb_used": "1865828",
-        "kb_available": "191740568",
-        "percent_used": "1%",
+        "kb_used": "3767616",
+        "kb_available": "189838780",
+        "percent_used": "2%",
         "mount": "/",
         "total_inodes": "12967936",
-        "inodes_used": "88325",
-        "inodes_available": "12879611",
+        "inodes_used": "125792",
+        "inodes_available": "12842144",
         "inodes_percent_used": "1%",
         "fs_type": "ext4",
         "mount_options": [
@@ -466,13 +806,13 @@
       },
       "/dev/vda1": {
         "kb_size": "243823",
-        "kb_used": "53811",
-        "kb_available": "177212",
-        "percent_used": "24%",
+        "kb_used": "79600",
+        "kb_available": "151423",
+        "percent_used": "35%",
         "mount": "/boot",
         "total_inodes": "64000",
-        "inodes_used": "44",
-        "inodes_available": "63956",
+        "inodes_used": "50",
+        "inodes_available": "63950",
         "inodes_percent_used": "1%",
         "fs_type": "ext4",
         "mount_options": [
@@ -745,35 +1085,35 @@
     "command": {
       "ps": "ps -ef"
     },
-    "uptime_seconds": 7111,
-    "uptime": "1 hours 58 minutes 31 seconds",
-    "idletime_seconds": 21275,
-    "idletime": "5 hours 54 minutes 35 seconds",
-    "ohai_time": 1436031538.4572012,
+    "uptime_seconds": 1355245,
+    "uptime": "15 days 16 hours 27 minutes 25 seconds",
+    "idletime_seconds": 4060600,
+    "idletime": "46 days 23 hours 56 minutes 40 seconds",
+    "ohai_time": 1437379671.796176,
     "memory": {
       "swap": {
-        "cached": "0kB",
+        "cached": "740kB",
         "total": "2097148kB",
-        "free": "2097148kB"
+        "free": "2094428kB"
       },
       "total": "1922204kB",
-      "free": "1255584kB",
-      "buffers": "38980kB",
-      "cached": "424660kB",
-      "active": "248984kB",
-      "inactive": "313356kB",
-      "dirty": "72kB",
+      "free": "314160kB",
+      "buffers": "31028kB",
+      "cached": "1262636kB",
+      "active": "838212kB",
+      "inactive": "592208kB",
+      "dirty": "1752kB",
       "writeback": "0kB",
-      "anon_pages": "98748kB",
-      "mapped": "13536kB",
-      "slab": "75116kB",
-      "slab_reclaimable": "53848kB",
-      "slab_unreclaim": "21268kB",
-      "page_tables": "2912kB",
+      "anon_pages": "136208kB",
+      "mapped": "16828kB",
+      "slab": "146696kB",
+      "slab_reclaimable": "124636kB",
+      "slab_unreclaim": "22060kB",
+      "page_tables": "4140kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "3058248kB",
-      "committed_as": "198296kB",
+      "committed_as": "520520kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "11504kB",
       "vmalloc_chunk": "34359722888kB"
@@ -1282,10 +1622,31 @@
         },
         "motchang": {
           "dir": "/home/motchang",
-          "gid": 500,
+          "gid": 501,
           "uid": 500,
           "shell": "/bin/bash",
           "gecos": ""
+        },
+        "rbenv": {
+          "dir": "/home/rbenv",
+          "gid": 501,
+          "uid": 501,
+          "shell": "/bin/bash",
+          "gecos": ""
+        },
+        "radio": {
+          "dir": "/home/radio",
+          "gid": 502,
+          "uid": 502,
+          "shell": "/bin/bash",
+          "gecos": ""
+        },
+        "mysql": {
+          "dir": "/var/lib/mysql",
+          "gid": 27,
+          "uid": 27,
+          "shell": "/bin/bash",
+          "gecos": "MySQL Server"
         }
       },
       "group": {
@@ -1557,19 +1918,103 @@
           "members": [
 
           ]
+        },
+        "rbenv": {
+          "gid": 501,
+          "members": [
+
+          ]
+        },
+        "radio": {
+          "gid": 502,
+          "members": [
+
+          ]
+        },
+        "mysql": {
+          "gid": 27,
+          "members": [
+
+          ]
         }
       }
     },
     "current_user": "root",
     "init_package": "init",
     "recipes": [
-
+      "emacs::default",
+      "common-packages::default",
+      "net-radio-archive::default",
+      "yum-remi::default",
+      "yum-epel::default",
+      "rbenv::default",
+      "build-essential::default",
+      "build-essential::_rhel",
+      "git::default",
+      "rbenv::ruby_build"
     ],
     "expanded_run_list": [
-
+      "emacs::default",
+      "common-packages::default",
+      "net-radio-archive::default"
     ],
     "roles": [
-
-    ]
-  }
+      "net-radio"
+    ],
+    "cookbooks": {
+      "emacs": {
+        "version": "0.1.0"
+      },
+      "common-packages": {
+        "version": "0.1.0"
+      },
+      "net-radio-archive": {
+        "version": "0.1.0"
+      },
+      "rbenv": {
+        "version": "1.7.1"
+      },
+      "selinux": {
+        "version": "0.5.6"
+      },
+      "yum-repoforge": {
+        "version": "0.5.3"
+      },
+      "yum-epel": {
+        "version": "0.6.2"
+      },
+      "yum-remi": {
+        "version": "0.1.0"
+      },
+      "git": {
+        "version": "4.2.4"
+      },
+      "build-essential": {
+        "version": "2.2.3"
+      },
+      "apt": {
+        "version": "2.7.0"
+      },
+      "ohai": {
+        "version": "2.0.1"
+      },
+      "yum": {
+        "version": "3.6.3"
+      },
+      "dmg": {
+        "version": "2.2.2"
+      },
+      "windows": {
+        "version": "1.37.0"
+      },
+      "chef_handler": {
+        "version": "1.2.0"
+      }
+    }
+  },
+  "run_list": [
+    "recipe[emacs]",
+    "recipe[common-packages]",
+    "role[net-radio]"
+  ]
 }
